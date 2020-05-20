@@ -99,10 +99,10 @@ def get_details(url, base_category):
     # image_urls should be a list
     images = []                    
     try:
-        image_items = html.select('form tr td img')
+        image_items = html.select('form img')
         for image_item in image_items:
             img_src = image_item.get('src')
-            if 'Ext.JPG' in img_src:
+            if '.JPG' in img_src:
                 img = base_url + '/' + img_src
                 if img not in images:
                     images.append(img)
